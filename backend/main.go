@@ -8,10 +8,6 @@ import (
 	"log"
 )
 
-func routing(app *fiber.App) {
-	app.Get("/", routes.Index)
-}
-
 func main() {
 	err := godotenv.Load()
 	if err != nil {
@@ -24,7 +20,7 @@ func main() {
 	app.Use(cors.New(cors.Config{
 		AllowCredentials: true,
 	}))
-	routing(app)
+	routes.Setup(app)
 
-	log.Fatal(app.Listen(PORT))
+	app.Listen(PORT)
 }

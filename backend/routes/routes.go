@@ -1,7 +1,11 @@
 package routes
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"github.com/gofiber/fiber/v2"
+	"github.com/simpleittools/simplehome/controllers"
+)
 
-func Index(c *fiber.Ctx) error {
-	return c.SendString("Hello, From Routing!")
+func Setup(app *fiber.App) {
+	app.Get("/", controllers.Index)
+
 }
