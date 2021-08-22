@@ -4,8 +4,13 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
+	"github.com/simpleittools/simplehome/routes"
 	"log"
 )
+
+func routing(app *fiber.App) {
+	app.Get("/", routes.Index)
+}
 
 func main() {
 	err := godotenv.Load()
@@ -19,10 +24,7 @@ func main() {
 	app.Use(cors.New(cors.Config{
 		AllowCredentials: true,
 	}))
-
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World!")
-	})
+	routing(app)
 
 	log.Fatal(app.Listen(PORT))
 }
