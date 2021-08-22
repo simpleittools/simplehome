@@ -8,6 +8,7 @@ require (
 	github.com/gofiber/fiber/v2 v2.17.0 // indirect
 	github.com/jackc/pgx/v4 v4.13.0 // indirect
 	github.com/jcmturner/gokrb5/v8 v8.2.0 // indirect
+	github.com/joho/godotenv v1.3.0 // indirect
 	github.com/valyala/fasthttp v1.29.0 // indirect
 	golang.org/x/crypto v0.0.0-20210817164053-32db794688a5 // indirect
 	golang.org/x/sys v0.0.0-20210820121016-41cdb8703e55 // indirect
